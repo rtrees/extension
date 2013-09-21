@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "r/trees extension",
+  "description": "A Reddit extension made by ents, for ents.",
+  "version": "1.0",
+  "permissions": [
+    "http*://reddit.com/",
+    "trees.reddit.com"
+  ],
+  "permissions": [
+    "cookies",
+    "tabs",
+    "history",
+    "http://reddit.com/*",
+    "https://reddit.com/*",
+    "http://*.reddit.com/*",
+    "https://*.reddit.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [{
+    "css": [
+      "trees.css"
+    ],
+    "js": [
+      "underscore.js",
+      "trees.js"
+    ],
+    "matches": [
+      "http://reddit.com/*",
+      "https://reddit.com/*",
+      "http://*.reddit.com/*",
+      "https://*.reddit.com/*"
+    ],
+    "run_at": "document_start"
+  }]
+}
